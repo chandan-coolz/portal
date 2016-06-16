@@ -10,12 +10,12 @@
  */
 angular
   .module('currentPtojectApp', [
-    'ngRoute','ui.bootstrap'
+    'ngRoute','ui.bootstrap','duScroll'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'Dashboard_module/views/header/header.html',
+        templateUrl: 'Dashboard_module/views/dashboard_module.html',
         controller: 'DashboardCtrl'
      
       })

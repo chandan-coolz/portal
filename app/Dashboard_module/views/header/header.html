@@ -1,23 +1,31 @@
 <header class="main-header"  ng-controller = "DashboardHeaderCtrl">
    <!-- Logo -->
-   <a href="index2.html" class="logo">
+   <a  class="logo" >
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>Website</b>Logo</span>
+      
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Website</b>Logo</span>
+      <span class="logo-lg" ng-class="{'logo-lg' : showLogo  , 'logo-mini' : !showLogo  } "><b ng-show="showLogo">Website Logo</b></span>
    </a>
    <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
+      <a  class="sidebar-toggle"  role="button" ng-click="toggleSideBar()">
+        
+        <i class="fa fa-bars fa-lg " aria-hidden="true" ></i> 
+
+      </a>
+ 
+
+
       <div class="navbar-custom-menu">
          <ul class="nav navbar-nav">
-            <!-- Messages: style -->
+                     <!-- Messages: style -->
             <li class="dropdown messages-menu">
-               <a  class="dropdown-toggle" ng-mouseover="isMessageItemsCollapsed = false" ng-mouseleave="isMessageItemsCollapsed = true"  >
-               <i class="fa fa-envelope-o"></i>
+               <a  class="dropdown-toggle" ng-mouseover="isMessageItemsCollapsed = false" ng-mouseleave="hideMessageOptions()"  >
+               <i class="fa fa-envelope-o" ></i>
                <span class="label label-success">4</span>
                </a>
                <!--dropdown menu for messages-->
-               <ul class="dropdown-menu pull-right" uib-collapse="isMessageItemsCollapsed" ng-mouseover="isMessageItemsCollapsed = false"  ng-mouseleave="isMessageItemsCollapsed = true" >
+               <ul class="dropdown-menu pull-right" uib-collapse="isMessageItemsCollapsed" ng-mouseover="isMessageItemsCollapsed = false; isMouseOverMenu = true"  ng-mouseleave="isMessageItemsCollapsed = true ; isMouseOverMenu = false"  >
                   <li class="header">You have 4 messages</li>
                   <li>
                      <!-- inner menu heading -->
@@ -94,15 +102,98 @@
 
             </li>
             <!-- message-menu  li-->
+
+
+
+
+
+
+
+
+
+
+
+             <!-- Notifications: style can be found in dropdown.less -->
+            <li class="dropdown notifications-menu">
+
+              <a  class="dropdown-toggle" ng-mouseover="isNotificationItemsCollapsed  = false" ng-mouseleave="hideNotificationOptions()">
+              <i class="fa fa-bell-o"></i>
+              <span class="label label-warning">10</span>
+              </a>
+             
+              <!-- notification dropdown -->
+              <ul class="dropdown-menu pull-right" class="dropdown-menu pull-right" uib-collapse="isNotificationItemsCollapsed" ng-mouseover="isNotificationItemsCollapsed = false ; isMouseOverMenu = true;"  ng-mouseleave="isNotificationItemsCollapsed = true ; isMouseOverMenu = false">
+                <li class="header">You have 10 notifications</li>
+                 <li>
+                <!-- inner menu: contains the actual data -->
+                  <ul class="menu">
+                     
+                     <li>
+                     <a href="#">
+                      <i class="fa fa-users " style="color:aqua"></i> 5 new members joined today
+                     </a>
+                    </li>
+                  
+                      <li>
+                    <a href="#">
+                      <i class="fa fa-warning " style="color:yellow"></i> Very long description here that may not fit into the
+                      page and may cause design problems
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users " style="color:red"></i> 5 new members joined
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-shopping-cart" style="color:green""></i> 25 sales made
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-user " style="color:red" ></i> You changed your username
+                    </a>
+                  </li>
+    
+                  </ul><!-- end of menu -->
+                </li><!-- end of inner content of notification -->
+                <li class="footer"><a href="#">View all</a></li>
+               </ul><!-- notification drop down end --> 
+            </li><!-- notification menu end here -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
            
              <!-- Tasks: style  -->
               <li class="dropdown tasks-menu">
-                 <a href="#" class="dropdown-toggle" ng-mouseover = "isTaskItemsCollapsed = false" ng-mouseleave = "isTaskItemsCollapsed = true">
+                 <a  class="dropdown-toggle" ng-mouseover = "isTaskItemsCollapsed = false" ng-mouseleave = "hideTaskOptions()">
                   <i class="fa fa-flag-o"></i>
                   <span class="label label-danger">9</span>
                  </a>
                  <!-- dropdown options for task -->
-                  <ul class="dropdown-menu pull-right" uib-collapse = "isTaskItemsCollapsed" ng-mouseover = "isTaskItemsCollapsed = false"  ng-mouseleave = "isTaskItemsCollapsed = true">
+                  <ul class="dropdown-menu pull-right" uib-collapse = "isTaskItemsCollapsed" ng-mouseover = "isTaskItemsCollapsed = false ; isMouseOverMenu = true;"  ng-mouseleave = "isTaskItemsCollapsed = true ; isMouseOverMenu = false;">
                      <li class="header">You have 9 tasks</li>
                      <li>
                      <!-- inner menu: contains the actual data -->
@@ -174,6 +265,76 @@
                   </ul>
                   <!-- end of dropdown actions for task -->
               </li> <!-- end of task style --> 
+
+
+   
+             <!-- User Account: view -->
+             <li class="dropdown user user-menu">
+
+             <a  class="dropdown-toggle"  ng-mouseover = "isUserItemsCollapsed = false" ng-mouseleave = "hideUserOptions()">
+              <img src="Dashboard_module/images/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Chandan Coolz</span>
+             </a>
+             
+             <!-- dropdown options for user-->
+                  <ul class="dropdown-menu pull-right" uib-collapse = "isUserItemsCollapsed " ng-mouseover = "isUserItemsCollapsed  = false ;isMouseOverMenu = true;"  ng-mouseleave = "isUserItemsCollapsed  = true; isMouseOverMenu = false;">
+     
+                   <li>
+              <!-- inner menu heading -->
+                     <ul class="menu" >
+                        <li>
+                           <!-- start message -->
+                             <a href="#">
+                             <i class="fa fa-user fa-lg " style="color:#3B5998"></i> <span>My Profile</span>
+                             </a>
+                        </li>
+
+                        <li>
+                           <!-- start message -->
+                             <a href="#">
+                             <i class="fa fa-flag-o fa-lg " style="color:red"></i> <span>My Task</span>
+                             <span class="label label-danger" style="float:right; font-size: 9px;">9</span>
+                             </a>
+                        </li>
+
+
+                        <li>
+                           <!-- start message -->
+                             <a href="#">
+                             <i class="fa fa-envelope-o fa-lg" style="color:#FEBB00"></i> <span>My Inbox</span>
+                             <span class="label label-success" style="float:right; font-size: 9px;">4</span> 
+                             </a>
+                        </li>
+                        
+                        <li>
+                           <!-- start message -->
+                             <a href="#">
+                             <i class="fa fa-key fa-lg" style="color:#00A65A"></i> <span>Log Out</span> 
+                             </a>
+                        </li>
+
+                        <!-- end message -->
+                     </ul>
+                     <!-- menu end -->
+
+                     </li>
+                     </ul><!--end of dropdown menu -->
+
+
+
+
+
+
+
+
+
+
+
+
+          
+            </li>
+            <!-- user account end here -->
+
             <!-- end of toggle submenu -->
          </ul>
          <!-- nav navbar-nav -->

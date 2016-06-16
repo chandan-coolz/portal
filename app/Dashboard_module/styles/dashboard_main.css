@@ -1,0 +1,56 @@
+html,.wrapper {
+  //  min-height: 100%;
+    height:900px;
+    position: relative;
+    overflow: visible;
+}
+
+body {
+    min-height: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+.wrapper:before,
+.wrapper:after {
+    content: " ";
+    display: table;
+}
+.wrapper:after {
+    clear: both;
+}
+
+
+.hideSideBar{
+
+   position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    padding-top: 50px;
+    min-height: 100%;
+    background-color: #222D32;
+    width: 0px;
+    z-index: 810;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out, width 0.3s ease-in-out;
+    -moz-transition: -moz-transform 0.5s ease-in-out, width 0.3s ease-in-out;
+    -o-transition: -o-transform 0.5s ease-in-out, width 0.3s ease-in-out;
+    transition: transform 0.5s ease-in-out, width 0.3s ease-in-out;
+
+}
+
+
+
+
+
+
+
+
