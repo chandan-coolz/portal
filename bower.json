@@ -7,7 +7,8 @@
     "angular-route": "^1.4.0",
     "angular-animate": "^1.5.6",
     "angular-touch": "^1.5.6",
-    "angular-bootstrap": "*"
+    "angular-bootstrap": "*",
+	"angular-scroll":"*"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
