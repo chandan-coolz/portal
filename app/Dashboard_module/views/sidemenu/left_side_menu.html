@@ -1,11 +1,11 @@
   <!-- Left side column. contains the logo and sidebar -->
-  <aside ng-controller="DashboardLeftMenuCtrl"  ng-class="{'main-sidebar' : showSideBar , 'main_sidebar_tab' : !showSideBar} "    >
+  <aside ng-controller="DashboardLeftMenuCtrl"  ng-class="{'main-sidebar' : showSideBar && !hideSideBar , 'main_sidebar_tab' : !showSideBar &&  !hideSideBar,'main-sidebar-hide' : hideSideBar} " >
     
     <!-- sidebar: style can be found in sidebar.less -->
-    <section   ng-class="{'sidebar' : showSideBar , 'sidebar_tab' : !showSideBar} ">
+    <section   ng-class="{'sidebar' : showSideBar && !hideSideBar , 'sidebar_tab' : !showSideBar && !hideSideBar , 'sidebar-hide' : hideSideBar} " >
     
       <!-- Sidebar user panel -->
-      <div  ng-class="{'user-panel' : showSideBar , 'user-panel_tab' : !showSideBar} ">
+      <div  ng-class="{'user-panel' : showSideBar && !hideSideBar , 'user-panel_tab' : !showSideBar && !hideSideBar , 'user-panel-hide' : hideSideBar} ">
  
          <div class="pull-left image" >
           <img src="Dashboard_module/images/user2-160x160.jpg" class="img-circle" alt="User Image">
@@ -19,7 +19,7 @@
      </div><!-- end of user panel -->
 
 
-          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <!-- sidebar menu -->
       <ul  ng-class="{'sidebar-menu' : showSideBar , 'sidebar-menu_tab' : !showSideBar} ">
        <li class="header">GENERAL</li>
        <li>
@@ -32,12 +32,12 @@
        <li  ng-class="{'active' : angularjSOptionsShow , 'treeview' : !angularjSOptionsShow  } " >
 
 
-          <a href=""  ng-mouseover="show_tab_angularjS_slide_heading = true" ng-mouseleave="show_tab_angularjS_slide_heading = false">
+          <a href=""  ng-mouseover="angularjS_tab_heading_mouseOver();" ng-mouseleave="angularjS_tab_heading_mouseLeft();">
             <i class="fa fa-cog fg-lg"></i>
             <span  ng-class="{'show_heading' : show_tab_angularjS_slide_heading , 'hide_heading' : !show_tab_angularjS_slide_heading } " >AngularjS Features</span>
-            <i class="fa fa-angle-left pull-right" ng-click = "angularjSOptionsShow = !angularjSOptionsShow"></i>
+            <i class="fa fa-chevron-left pull-right" ng-click = "angularjSOptionsShow = !angularjSOptionsShow"></i>
           </a>
-          <ul  class="treeview-menu">
+          <ul  class="treeview-menu"  ng-show="showSideBar || (!showSideBar && show_tab_angularjS_slide_heading) "  ng-mouseover="show_tab_first_level_menu = true" ng-mouseleave="show_tab_angularjS_slide_heading = false; show_tab_first_level_menu = false" >
            <li><a href="" ><i class="fa fa-circle-o"></i> UI Bootstrap</a></li>
            <li><a href=""><i class="fa fa-circle-o"></i> File Upload</a></li>
            <li><a href=""><i class="fa fa-circle-o"></i> File Select</a></li>
@@ -45,21 +45,21 @@
       </li>  <!-- end of angularjS -->
 
      <li id="jquery-secion-option" ng-class="{'active' : jQueryOptionsShow , 'treeview' : !jQueryOptionsShow  } "   >
-         <a href="" ng-mouseover="show_tab_jQuery_slide_heading = true" ng-mouseleave="show_tab_jQuery_slide_heading = false" >
+         <a href="" ng-mouseover="jQuery_tab_heading_mouseOver();" ng-mouseleave="jQuery_tab_heading_mouseLeft();" >
             <i class="fa fa-wrench fa-lg"></i>
             <span ng-class="{'show_heading' : show_tab_jQuery_slide_heading , 'hide_heading' : !show_tab_jQuery_slide_heading } ">JQuery Plugins</span>
-            <i class="fa fa-angle-left pull-right" ng-click = "jQueryOptionsClicked();"></i>
+            <i class="fa fa-chevron-left pull-right" ng-click = "jQueryOptionsClicked();"></i>
           </a>
 
-          <ul class="treeview-menu">
-             <  <li><a href=""><i class="fa fa-circle-o"></i> Form Tools</a></li>
+          <ul class="treeview-menu"  ng-show="showSideBar || (!showSideBar && show_tab_jQuery_slide_heading ) "   ng-mouseover="show_tab_first_level_menu = true"  ng-mouseleave="show_tab_jQuery_slide_heading = false; show_tab_first_level_menu = false" >
+             <li><a href=""><i class="fa fa-circle-o"></i> Form Tools</a></li>
                <li><a href=""><i class="fa fa-circle-o"></i> Date & Time Pickers </a></li>
                <li><a href=""><i class="fa fa-circle-o"></i> Custom Dropdowns</a></li>
                <li><a href=""><i class="fa fa-circle-o"></i> Tree View</a></li>
-               <li ng-class="{'active' : jQueryOptionsShow_datatablesOptionsShow , 'treeview' : !jQueryOptionsShow_datatablesOptionsShow  } "    >
+               <li ng-class="{'active' : jQueryOptionsShow_datatablesOptionsShow || jQueryOptionsShow_datatablesOptionsShow_tab , 'treeview' : !jQueryOptionsShow_datatablesOptionsShow || !jQueryOptionsShow_datatablesOptionsShow_tab } "    >
 
-                    <a href=""><i class="fa fa-circle-o"></i> Datatables<i class="fa fa-angle-left pull-right" ng-click = "jQeryDatatablesOptionClicked();"></i></a>
-                    <ul class="treeview-menu" >
+                    <a href=""><i class="fa fa-circle-o"></i> Datatables<i class="fa fa-chevron-left pull-right" ng-click = "jQeryDatatablesOptionClicked();" ng-mouseover="jQuery_datatablesOptionsShow_tab_heading_mouseOver();" ng-mouseleave="jQuery_datatablesOptionsShow_tab_heading_mouseLeave();"></i></a>
+                    <ul class="treeview-menu"   ng-mouseover="show_tab_second_level_menu  = true" ng-mouseleave="jQueryOptionsShow_datatablesOptionsShow_tab = false; show_tab_second_level_menu = false" >
                            
                           <li><a href=""><i class="fa fa-circle-o"></i>Managed Datatables</a></li>
                           <li><a href=""><i class="fa fa-circle-o"></i>Ajax Datatables</a></li> 

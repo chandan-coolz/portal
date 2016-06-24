@@ -17,8 +17,8 @@ angular.module('currentPtojectApp')
  $scope.isUserItemsCollapsed = true;
  $scope.showLogo = true;
  $scope.isMouseOverMenu = false;
-
  $rootScope.showSideBar = true;
+ $rootScope.hideSideBar = true ;
 
 
 $scope.hideMessageOptions = function(){
@@ -74,11 +74,14 @@ $timeout(function() {
 $scope.toggleSideBar = function() {
 
 $rootScope.showSideBar = !$rootScope.showSideBar;
- $scope.showLogo = !$scope.showLogo;
+$scope.showLogo = !$scope.showLogo;
 }//toggleSideBar
 
 
+$scope.toggle_mobile_SideBar =  function() {
 
+    $rootScope.hideSideBar = !$rootScope.hideSideBar ;
+}
 
 
 

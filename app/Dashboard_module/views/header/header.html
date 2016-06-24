@@ -4,11 +4,18 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg" ng-class="{'logo-lg' : showLogo  , 'logo-mini' : !showLogo  } "><b ng-show="showLogo">Website Logo</b></span>
+      <span class="logo-lg" ng-class="{'logo-lg' : showLogo  , 'logo-mini' : !showLogo  } ">Website Logo</span>
    </a>
+   
    <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       <a  class="sidebar-toggle"  role="button" ng-click="toggleSideBar()">
+        
+        <i class="fa fa-bars fa-lg " aria-hidden="true" ></i> 
+
+      </a>
+
+      <a  class="mobile-sidebar-toggle"  role="button" ng-click="toggle_mobile_SideBar()">
         
         <i class="fa fa-bars fa-lg " aria-hidden="true" ></i> 
 
@@ -114,7 +121,7 @@
 
 
              <!-- Notifications: style can be found in dropdown.less -->
-            <li class="dropdown notifications-menu">
+          <li class="dropdown notifications-menu">
 
               <a  class="dropdown-toggle" ng-mouseover="isNotificationItemsCollapsed  = false" ng-mouseleave="hideNotificationOptions()">
               <i class="fa fa-bell-o"></i>
@@ -130,30 +137,30 @@
                      
                      <li>
                      <a href="#">
-                      <i class="fa fa-users " style="color:aqua"></i> 5 new members joined today
+                      <i class="fa fa-users " style="color:#3498db"></i> 5 new members joined today
                      </a>
                     </li>
                   
                       <li>
                     <a href="#">
-                      <i class="fa fa-warning " style="color:yellow"></i> Very long description here that may not fit into the
+                      <i class="fa fa-warning " style="color:#f1c40f"></i> Very long description here that may not fit into the
                       page and may cause design problems
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i class="fa fa-users " style="color:red"></i> 5 new members joined
+                      <i class="fa fa-users " style="color:#e74c3c"></i> 5 new members joined
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i class="fa fa-shopping-cart" style="color:green""></i> 25 sales made
+                      <i class="fa fa-shopping-cart" style="color:#2ecc71""></i> 25 sales made
                     </a>
                   </li>
                   
                   <li>
                     <a href="#">
-                      <i class="fa fa-user " style="color:red" ></i> You changed your username
+                      <i class="fa fa-user " style="color:#f1c40f" ></i> You changed your username
                     </a>
                   </li>
     
@@ -163,8 +170,8 @@
                </ul><!-- notification drop down end --> 
             </li><!-- notification menu end here -->
 
-
-
+          
+         
 
 
 
@@ -271,14 +278,15 @@
              <!-- User Account: view -->
              <li class="dropdown user user-menu">
 
-             <a  class="dropdown-toggle"  ng-mouseover = "isUserItemsCollapsed = false" ng-mouseleave = "hideUserOptions()">
+             <a   ng-mouseover = "isUserItemsCollapsed = false" ng-mouseleave = "hideUserOptions()">
               <img src="Dashboard_module/images/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Chandan Coolz</span>
+              <span >Chandan Coolz</span>
              </a>
              
              <!-- dropdown options for user-->
-                  <ul class="dropdown-menu pull-right" uib-collapse = "isUserItemsCollapsed " ng-mouseover = "isUserItemsCollapsed  = false ;isMouseOverMenu = true;"  ng-mouseleave = "isUserItemsCollapsed  = true; isMouseOverMenu = false;">
-     
+                  <ul class="dropdown-menu pull-right" uib-collapse = "isUserItemsCollapsed " ng-mouseover = "isUserItemsCollapsed  = false ;isMouseOverMenu = true;"  ng-mouseleave = "isUserItemsCollapsed  = true; isMouseOverMenu = false
+                  ;" >
+                    
                    <li>
               <!-- inner menu heading -->
                      <ul class="menu" >
@@ -293,7 +301,7 @@
                            <!-- start message -->
                              <a href="#">
                              <i class="fa fa-flag-o fa-lg " style="color:red"></i> <span>My Task</span>
-                             <span class="label label-danger" style="float:right; font-size: 9px;">9</span>
+                             <span class="label label-danger" >9</span>
                              </a>
                         </li>
 
@@ -302,7 +310,7 @@
                            <!-- start message -->
                              <a href="#">
                              <i class="fa fa-envelope-o fa-lg" style="color:#FEBB00"></i> <span>My Inbox</span>
-                             <span class="label label-success" style="float:right; font-size: 9px;">4</span> 
+                             <span class="label label-success" >4</span> 
                              </a>
                         </li>
                         

@@ -18,6 +18,8 @@
 
 
 
+
+
 .sidebar {
     padding-bottom: 10px;
 }
@@ -109,14 +111,14 @@
 }
 
 
-.sidebar-menu li > a > .fa-angle-left {
+.sidebar-menu li > a > .fa-chevron-left {
     width: auto;
     height: auto;
     padding: 0;
     margin-right: 10px;
     margin-top: 3px;
 }
-.sidebar-menu li.active > a > .fa-angle-left {
+.sidebar-menu li.active > a > .fa-chevron-left {
     -webkit-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
@@ -248,7 +250,7 @@
 }
 
 
-
+/****************************************************************************************************************************************/
 
 .main_sidebar_tab {
     position: absolute;
@@ -356,7 +358,7 @@ display: none;
 
 
 
-.sidebar-menu_tab > li > a > .fa-angle-left {
+.sidebar-menu_tab > li > a > .fa-chevron-left {
 display: none;
 }
 
@@ -378,7 +380,7 @@ display: none;
 .sidebar-menu_tab .treeview-menu {
     background: #222D32;
     position:absolute;
-    display: none;
+    display: block;
     list-style: none;
     padding-left: 0px;
     width: 200px;
@@ -390,7 +392,7 @@ display: none;
 
 
 
-.sidebar-menu_tab .treeview-menu > li {
+.sidebar-menu_tab .treeview-menu> li {
     margin: 0;
 }
 
@@ -405,4 +407,133 @@ display: none;
 .sidebar-menu_tab .treeview-menu > li > a > .glyphicon,
 .sidebar-menu_tab .treeview-menu > li > a > .ion {
     width: 20px;
+}
+
+
+.sidebar-menu_tab  > li  > .treeview-menu > li > a >  .fa-chevron-left {
+  width: 15px;
+    height: auto;
+    padding: 0;
+    margin-right: 10px;
+    margin-top: 3px;
+    
+    box-sizing: border-box;
+
+
+}
+
+
+.sidebar-menu_tab  > li  > .treeview-menu > li.active > a >  .fa-chevron-left {
+
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+
+}
+
+
+.sidebar-menu_tab   li > .treeview-menu > li > .treeview-menu {
+    padding-left: 20px;
+     margin-top: 1px;
+    display: none;
+    position: absolute;
+}
+
+
+
+.sidebar-menu_tab  li > .treeview-menu > li.active > .treeview-menu {
+    padding-left: 20px;
+     margin-top: 0px;
+    display: block;
+    position: absolute;
+}
+
+
+
+
+
+
+/** start of mobile view **/
+@media only screen  and (max-width: 440px) {
+
+.main-sidebar {
+
+    
+    width: 100vw;
+    z-index: 810;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    -moz-transition: -moz-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    -o-transition: -o-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+    
+
+.user-panel {
+
+    margin-top: 60px;
+  
+}
+
+.sidebar-menu {
+     margin-top: 10px;
+
+}
+    
+}
+/** end of mobile view **/
+
+
+
+
+
+
+
+.main-sidebar-hide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    padding-top: 50px;
+    min-height: 100%;
+     background-color: #222D32;
+    
+    width: 0px;
+    z-index: 810;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    -moz-transition: -moz-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    -o-transition: -o-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+
+
+.sidebar-hide {
+    padding-bottom: 10px;
+}
+
+.user-panel-hide{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    margin-top: 55px;
+    overflow: hidden;
+}
+.user-panel-hide:before,
+.user-panel:after {
+    content: " ";
+    display: table;
+}
+.user-panel-hide:after {
+    clear: both;
+}
+
+.user-panel-hide> .image > img {
+    width: 100%;
+    max-width: 40px;
+    height: auto;
+}
+
+.user-panel-hide> .info {
+ display: none;
 }
