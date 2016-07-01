@@ -9,6 +9,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -24,8 +25,11 @@
     <link rel="stylesheet" href="Dashboard_module\styles\layout.css">
     <link rel="stylesheet" href="Dashboard_module\styles\header_layout.css">
     <link rel="stylesheet" href="Dashboard_module\styles\left_side_menu.css">
-      
-
+    
+     
+    <!-- login css --> 
+    <link rel="stylesheet" href="Login_module\styles\login_style.css">
+    <link rel="stylesheet" href="Login_module\styles\forget-password.css">
 
     <!-- endbuild -->
   </head>
@@ -37,15 +41,15 @@
 
 
 
-    <div >
+    
     <div ng-view=""></div>
-    </div>
+   
 
 
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
+    <!-- <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
@@ -54,7 +58,7 @@
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>
-
+  -->
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -73,8 +77,9 @@
         <script src="Dashboard_module/scripts/controllers/dashboard_header_controller.js"></script>
         <script src="Dashboard_module/scripts/controllers/dashboard_left_menu_controller.js"></script>
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        
-
+        <!-- login controller loading -->
+        <script src="Login_module/scripts/controllers/login_controller.js"></script>
+        <script src="Login_module/scripts/controllers/forget_password_controller.js"></script>
 
         <!-- endbuild -->
 </body>

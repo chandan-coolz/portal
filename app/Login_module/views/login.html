@@ -1,0 +1,52 @@
+
+
+
+<div class="login-wrapper" >
+	  <form class="login"  name="loginForm" ng-class="{'login' : !isAuthenticating , 'login-authenticating' :   isAuthenticating} " novalidate >
+	   
+	    <p class="title">LOGIN</p>
+	   
+ 
+
+	    <input type="text" placeholder="username" autofocus="autofocus"   name="username" ng-model="username"  ng-class="{'animated shake has-error' : isloginfocusOut && loginForm.username.$invalid && (!loginForm.username.$pristine )  }" ng-blur="isloginfocusOut=true;" ng-focus="isloginfocusOut=false;" required />
+	    <i class="fa fa-user"></i>
+	  
+
+
+       
+	    <input type="password" placeholder="Password" name="password" ng-model="password"  ng-class="{'animated shake has-error' : ispasswordfocusOut && loginForm.password.$invalid && (!loginForm.password.$pristine )  }" ng-blur="ispasswordfocusOut=true;" ng-focus="ispasswordfocusOut=false;" required/>	   
+	    <i class="fa fa-key"></i>
+	   
+	    <a href="#/forget-Password">Forgot your password?</a>
+
+	    <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+	     <span>Authenticating</span>
+	  
+	    <button ng-click="authenticate()" ng-disabled="loginForm.$invalid">
+
+	      
+	     
+	      <span class="state">Log in</span>
+	  
+	    </button>
+	  
+	  </form>
+
+
+   <!--  <div class="authenticate" ng-show="isAuthenticating" >
+	 <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+	 <p>Authenticaticating</p>
+     </div> -->
+	  
+</div>
+
+
+
+	 
+
+	    
+	    
+
+
+
+

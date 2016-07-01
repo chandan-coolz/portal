@@ -15,9 +15,21 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'Dashboard_module/views/dashboard_module.html',
-        controller: 'DashboardCtrl'
+        templateUrl: 'Login_module/views/login.html',
+        controller: 'loginCtrl'
      
+      })
+      .when('/forget-Password', {
+        templateUrl: 'Login_module/views/forget_password.html',
+        controller: 'forgetPasswordCtrl'
+     
+      })
+      .when('/dashboard',{
+
+       templateUrl: 'Dashboard_module/views/dashboard_module.html',
+        controller: 'DashboardCtrl'
+
+
       })
      
       .otherwise({
