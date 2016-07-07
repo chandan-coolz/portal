@@ -67,7 +67,9 @@
     font-size: 11px;
     color:#fff;
 }
-
+.user-panel > .info > a > .fa-circle {
+  color : #00FF01 ;
+ }   
 
 .user-panel > .info > a > .fa,
 .user-panel > .info > a > .ion,

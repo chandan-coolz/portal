@@ -8,22 +8,19 @@
  * Controller of the currentPtojectApp
  */
 angular.module('currentPtojectApp')
-  .controller('DashboardLeftMenuCtrl', function ($scope,$document,$rootScope,$timeout,$interval) {
+  .controller('DashboardLeftMenuCtrl', function ($scope,$document,$rootScope,$timeout,$interval,sideMenu) {
 
 
-$scope.angularjSOptionsShow = false; // for desktop
-$scope.jQueryOptionsShow = false; 
-$scope.jQueryOptionsShow_datatablesOptionsShow = false;
-$scope.show_tab_dashboard_slide_heading = false; //for tab
-$scope.show_tab_angularjS_slide_heading = false;
-$scope.show_tab_jQuery_slide_heading = false;
-$scope.show_tab_user_slide_heading = false;
-$scope.show_tab_task_todo_slide_heading = false;
+
 $scope.show_tab_first_level_menu = false;
-$scope.jQueryOptionsShow_datatablesOptionsShow_tab = false;
-$scope.show_tab_second_level_menu = false;
+
+
 var isTabletSize = false;
 var isMobileSize = false;
+
+
+//new variable
+$scope.showMenuHeading = false;
 
 var jqueryElement = angular.element(document.getElementById('jquery-secion-option'));
 $scope.jQeryDatatablesOptionClicked = function() {
@@ -51,10 +48,14 @@ if($rootScope.showSideBar) {
 
 
 
-$scope.angularjS_tab_heading_mouseOver = function() {
+
+
+
+$scope.tab_heading_mouseOver = function(key) {
 
 if(!$rootScope.showSideBar) {
-	$scope.show_tab_angularjS_slide_heading = true;
+	
+	$scope.sideMenuHeadingKey["show_tab_"+key+"_slide_heading"] = true;
 
 } 
 
@@ -68,18 +69,24 @@ if(!$rootScope.showSideBar) {
 
 
 
-$scope.angularjS_tab_heading_mouseLeft = function() {
+$scope.tab_heading_mouseLeft = function(key) {
+
 
 if(!$rootScope.showSideBar) {
+    
+	
 	
 $timeout(function() {
 	   
 	   if($scope.show_tab_first_level_menu){
-	   	  $scope.show_tab_angularjS_slide_heading = true ;
+	   	  
+	   	 
+	   	  $scope.sideMenuHeadingKey["show_tab_"+key+"_slide_heading"] = true;
 
 	   }else {
         
-          $scope.show_tab_angularjS_slide_heading = false ;
+        
+          $scope.sideMenuHeadingKey["show_tab_"+key+"_slide_heading"] = false;
 	   }
     }, 50);
 
@@ -92,73 +99,22 @@ $timeout(function() {
 
 
 
-//jQuery
 
-$scope.jQuery_tab_heading_mouseOver = function() {
-
-if(!$rootScope.showSideBar) {
-	$scope.show_tab_jQuery_slide_heading = true;
-
-} 
-
-} //jQuery_tab_heading_mouseOverend
-
-
-$scope.jQuery_tab_heading_mouseLeft = function() {
-
-if(!$rootScope.showSideBar) {
+$scope.showFirstlevelSubMenu = function(){
 	
-$timeout(function() {
-	   
-	   if($scope.show_tab_first_level_menu){
-	   	  $scope.show_tab_jQuery_slide_heading  = true ;
+	$scope.show_tab_first_level_menu = true;
+}
 
+$scope.hideFirstlevelSubMenu = function(key){
 
-	   }else {
-           
-          $scope.show_tab_jQuery_slide_heading  = false ;
-	   }
-    }, 50);
+   $scope.sideMenuHeadingKey['show_tab_'+key+'_slide_heading'] = false; 
+   $scope.show_tab_first_level_menu = false ;                                                                                                                                  
+}
 
 
 
 
-} //if
 
-} //jQuery_tab_heading_mouseLeft end
-
-
-
-$scope.jQuery_datatablesOptionsShow_tab_heading_mouseOver = function() {
-
-if(!$rootScope.showSideBar) {
-	$scope.jQueryOptionsShow_datatablesOptionsShow_tab = true;
-
-} 
-
-} //jQuery_tab_heading_mouseleave
-
-$scope.jQuery_datatablesOptionsShow_tab_heading_mouseLeave = function() {
-
-if(!$rootScope.showSideBar) {
-
-	$timeout(function() {
-	   
-	   if($scope.show_tab_second_level_menu){
-	   	  	$scope.jQueryOptionsShow_datatablesOptionsShow_tab = true;
-
-
-	   }else {
-           
-          	$scope.jQueryOptionsShow_datatablesOptionsShow_tab = false;
-	   }
-    }, 500);
-	
-
-
-} 
-
-} //jQuery_tab_heading_mouseleave end
 
 
 
@@ -209,5 +165,46 @@ if(screen.width>=440){
 
 
 
-//jQuery end
+
+
+
+
+
+//fetch side menu from APi
+
+$scope.sideMenu = {};  
+$scope.menusKey = {};  // side menu unique key
+$scope.sideMenuHeadingKey = {} //side menu heading unique key
+
+sideMenu.getList().then(function(data){
+
+$scope.sideMenu = data;
+
+//create unique key to menus options
+
+
+angular.forEach($scope.sideMenu,function(value,key){
+
+ $scope.menusKey[value.menu] = false;
+ $scope.sideMenuHeadingKey["show_tab_"+value.menu+"_slide_heading"] = false;
+
+
+});
+ 
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
   });

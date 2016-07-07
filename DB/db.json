@@ -1,0 +1,152 @@
+{
+"login":[
+	
+	{
+	 "id" : "cool",
+	 "password" : "123"
+	},
+	{
+	 "id" : "admin",
+	 "password" : "admin"	
+	}
+	
+	] ,
+	
+"Messages": [
+	{
+		"sender_name" : "Support Team",
+		"sender_userid" : "user1",
+		"Message" : " Make sure the site structure is clear and intuitive so that visitors can easily navigate between pages and subpages using the main menu or internal links.",
+		"time" : "5 min"
+	   } ,
+	   
+	   {
+		"sender_name" : "Design Team",
+		"sender_userid" : "user2",
+		"Message" : " Make sure the site structure is clear and intuitive so that visitors can easily navigate between pages and subpages using the main menu or internal links.",
+		"time" : "2 hour"
+	   } ,
+	   
+	   {
+		"sender_name" : "Developers",
+		"sender_userid" : "user3",
+		"Message" : " Make sure the site structure is clear and intuitive so that visitors can easily navigate between pages and subpages using the main menu or internal links.",
+		"time" : "5 hour"
+	   }  ,
+	   
+	   
+	   {
+		"sender_name" : "Sales Department",
+		"sender_userid" : "user4",
+		"Message" : "Why not to buy a new awesome theme.",
+		"time" : "7 hour"
+	   } ,
+	   
+	   {
+		"sender_name" : "Reviewers",
+		"sender_userid" : "user5",
+		"Message" : "Why not to buy a new awesome theme.",
+		"time" : "8 hour"
+	   } 
+	
+	
+	
+	] ,
+	
+	
+"Notification" : [
+	
+	  {
+	   "type" : "users",
+	   "message" : "5 new members joined today"
+	  } ,
+	  
+	  {
+	   "type" : "warning",
+	   "message" : "Your membership is about to finish, please renew your plan"
+	  } ,
+	  
+	  {
+		"type" : "sale",
+	   "message" : "25 sales made"  
+	  } ,
+	  
+	  {
+		"type" : "user" ,
+		"message" : "you changed your username"
+	  }
+      	  
+	
+	
+	]	,
+	
+	
+"Task" : [
+	
+    {
+	 "name" : "Design some buttons",
+	 "status" : "20"
+		
+	} ,
+	{
+	 "name" : "Create a nice theme",
+	 "status" : "40"
+	} ,
+	{
+	 "name" : "create a login form",
+	 "status" : "60"
+	} ,
+	{
+	 "name" : "Make beautiful transitions",
+	 "status" : "95"
+	}
+	
+],
+
+"side-menu" : [
+	
+   {
+	 "menu" : "AngularjS Features" ,
+	 "icon" : "fa-cog",
+	 "submenu" : [
+		           "UI Bootstrap",
+				   "File Upload",
+		           "File Select"
+		          ]
+   },	
+   
+   {
+	 "menu" : "JQuery Plugins" ,
+	 "icon" : "fa-wrench",
+	 "submenu" : [
+		          "Form Tools",
+				  "Date & Time Pickers ",
+				  "Custom Dropdowns",
+				  "Tree View",
+				  "Datatables"
+		          ]
+   },
+   
+   {
+	 "menu" : "User Profile"  ,
+	 "icon" : "fa-user",
+	 "submenu" : [
+		           
+		          ]
+   },
+   {
+   	 "menu" : "Task & Todo" ,
+	 "icon" : "fa-clock-o",
+	 "submenu" : [
+		           
+		          ]
+   }
+   
+	
+]
+	
+	
+	
+	
+	
+}

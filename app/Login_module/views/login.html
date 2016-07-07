@@ -7,7 +7,8 @@
 	    <p class="title">LOGIN</p>
 	   
  
-
+        <p class="invalid-login animated shake" ng-show="invalidLogin"> <span class="badge"> <i class="fa fa-exclamation" aria-hidden="true"></i> </span>
+         Invalid Credential</p>
 	    <input type="text" placeholder="username" autofocus="autofocus"   name="username" ng-model="username"  ng-class="{'animated shake has-error' : isloginfocusOut && loginForm.username.$invalid && (!loginForm.username.$pristine )  }" ng-blur="isloginfocusOut=true;" ng-focus="isloginfocusOut=false;" required />
 	    <i class="fa fa-user"></i>
 	  

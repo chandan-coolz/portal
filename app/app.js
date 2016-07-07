@@ -10,9 +10,14 @@
  */
 angular
   .module('currentPtojectApp', [
-    'ngRoute','ui.bootstrap','duScroll'
+    'ngRoute','ui.bootstrap','duScroll','restangular'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider,RestangularProvider) {
+   
+   RestangularProvider.setBaseUrl('http://localhost:3000');
+
+  
+
     $routeProvider
       .when('/', {
         templateUrl: 'Login_module/views/login.html',
@@ -35,4 +40,46 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  
+  .factory('LoginRestangular', function(Restangular){
+  
+   return Restangular.withConfig(function(RestangularConfig){
+   
+  
+
+    RestangularConfig.setRestangularFields({
+    id:"id"
+   }) ;
+
+    //RestangularConfig.setFullResponse(true);
+
+   });
+
+  })
+  
+
+.factory("Login",function(LoginRestangular){ //servie for login
+
+  return LoginRestangular.service('login');
+})
+
+.factory("Messages",function(Restangular){ //service for message
+
+return Restangular.service('Messages');
+
+})
+.factory("Notification", function(Restangular){ //service for Notification
+
+return Restangular.service('Notification');
+
+})
+.factory("Task", function(Restangular){ //service for task
+
+return Restangular.service("Task");
+})
+.factory("sideMenu", function(Restangular){ //for side menu
+
+return Restangular.service("side-menu");
+});
+
