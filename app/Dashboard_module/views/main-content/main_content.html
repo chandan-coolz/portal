@@ -1,0 +1,53 @@
+<div ng-controller="mainContentCtrl" class="main-content-wrap" ng-class="{'main-content-wrap-tab':!showSideBar && !hideSideBar  , 'main-content-wrap': showSideBar && !hideSideBar, 'main-content-wrap-mob' : hideSideBar }">
+
+
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small></small>
+      </h1>
+      
+
+</section>
+
+
+
+        <!-- Main content -->
+<section class="content">
+    
+    <div ng-class="{'box' : !moduleID[m] && !boxEnlarged , 'box-fullscreen' : moduleID[m] && boxEnlarged , 'box-hide': !moduleID[m] && boxEnlarged}" ng-repeat = "m in moduleSubscribed" >
+     
+      
+      <!-- include header here -->
+      <!--  -->
+      <div class="box-title" >
+         <div class="caption">
+            <span  class="bold uppercase">{{m}}</span>
+           <a ng-click="enlarge(m)"><i class="fa fa-expand fa-lg" aria-hidden="true" ></i></a>
+
+           <a ng-click="compress(m)"><i class="fa fa-compress fa-lg" aria-hidden="true" ></i></a>
+
+         </div><!--box caption end here -->
+      </div> <!-- box title end here -->
+
+      <div class="box-content" >
+          <ng-include src="moduleMapping[m]"></ng-include>
+      </div>
+
+     
+
+
+    </div><!--  box end here -->
+
+   
+   
+
+
+
+
+
+</section>
+
+
+
+</div>

@@ -19,6 +19,9 @@ var isTabletSize = false;
 var isMobileSize = false;
 
 
+
+
+
 //new variable
 $scope.showMenuHeading = false;
 
@@ -120,35 +123,36 @@ $scope.hideFirstlevelSubMenu = function(key){
 
 // screen change listener
 $interval(function(){
+var width =  document.documentElement.clientWidth;	
 
-if(screen.width < 440 &&  !$rootScope.showSideBar){
+if(width < 440 &&  !$rootScope.showSideBar){
 	$rootScope.showSideBar=true;
 	isMobileSize = true;
 	
 }
 
-if(screen.width >= 440 && screen.width <= 768  && $rootScope.showSideBar && isMobileSize ){
+if(width >= 440 &&  width <= 768  && $rootScope.showSideBar && isMobileSize ){
    $rootScope.showSideBar = false;
    isMobileSize = false;
 
   
 }
 
-if(screen.width >= 440 && screen.width <= 768  && $rootScope.showSideBar && !isMobileSize){
+if(width >= 440 && width <= 768  && $rootScope.showSideBar && !isMobileSize){
    $rootScope.showSideBar = false;
    isTabletSize = true;
 
   
 }
 
-if(screen.width > 768 && !$rootScope.showSideBar && isTabletSize){
+if(width > 768 && !$rootScope.showSideBar && isTabletSize){
 	$rootScope.showSideBar = true;
 	isTabletSize = false;
 	
 
 }
 
-if(screen.width>=440){
+if(width>=440){
 	$rootScope.hideSideBar = false ;
 }
 

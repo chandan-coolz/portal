@@ -29,7 +29,7 @@ $timeout(function() {
 	   if(!$scope.isMouseOverMenu){
 	    $scope.isMessageItemsCollapsed = true;
         }
-    }, 50);
+    }, 10);
 
 
 } //hideMessageOptions
@@ -41,7 +41,7 @@ $timeout(function() {
 	   if(!$scope.isMouseOverMenu){
 	    $scope.isTaskItemsCollapsed = true;
         }
-    }, 50);
+    }, 10);
 
 
 } //hideTaskOptions
@@ -53,7 +53,7 @@ $timeout(function() {
 	   if(!$scope.isMouseOverMenu){
 	    $scope.isNotificationItemsCollapsed = true;
         }
-    }, 50);
+    }, 10);
 
 
 } //hideNotificationOptions
@@ -64,7 +64,7 @@ $timeout(function() {
 	   if(!$scope.isMouseOverMenu){
 	    $scope.isUserItemsCollapsed = true;
         }
-    }, 50);
+    }, 10);
 
 
 } //hideNotificationOptions

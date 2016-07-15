@@ -14,6 +14,7 @@ angular
   ])
   .config(function ($routeProvider,RestangularProvider) {
    
+
    RestangularProvider.setBaseUrl('http://localhost:3000');
 
   
@@ -81,5 +82,8 @@ return Restangular.service("Task");
 .factory("sideMenu", function(Restangular){ //for side menu
 
 return Restangular.service("side-menu");
+}).factory("subscribedModule", function(Restangular){
+
+return Restangular.service("module-suscribed");
 });
 
